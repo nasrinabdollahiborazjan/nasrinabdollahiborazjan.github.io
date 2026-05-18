@@ -39,7 +39,7 @@
 
     .social-icons a {
       color: #111;
-      font-size: 1.75rem;
+      font-size: 1.8rem;
       margin-right: 13px;
       text-decoration: none;
       transition: color 0.2s ease;
@@ -55,7 +55,6 @@
       font-size: 1.15rem;
       margin-left: 28px;
       text-decoration: none;
-      text-transform: lowercase;
       letter-spacing: 0.5px;
     }
 
@@ -100,15 +99,6 @@
       line-height: 1.35;
     }
 
-    .hero-title a {
-      color: #169dcc;
-      text-decoration: none;
-    }
-
-    .hero-title a:hover {
-      text-decoration: underline;
-    }
-
     a {
       color: #169dcc;
       text-decoration: none;
@@ -147,13 +137,18 @@
       color: #111;
     }
 
+    .contact a i {
+      width: 24px;
+      color: #111;
+      margin-right: 6px;
+    }
+
     .section-title {
       font-size: 1.8rem;
       margin-top: 42px;
       margin-bottom: 12px;
       font-weight: 700;
       color: #111;
-      text-transform: lowercase;
       text-align: left;
       scroll-margin-top: 90px;
     }
@@ -181,6 +176,10 @@
       color: #9A0000;
       border-radius: 5px;
       font-weight: 600;
+    }
+
+    .button i {
+      margin-right: 6px;
     }
 
     .button:hover {
@@ -249,15 +248,23 @@
         <i class="fa-brands fa-linkedin"></i>
       </a>
 
-      <a href="https://scholar.google.com/citations?hl=en&user=w89dnTUAAAAJ" target="_blank" title="Google Scholar">
+      <a href="https://scholar.google.com/citations?user=w89dnTUAAAAJ&hl=en" target="_blank" title="Google Scholar">
         <i class="ai ai-google-scholar"></i>
+      </a>
+
+      <a href="cv.pdf" target="_blank" title="CV">
+        <i class="fa-solid fa-file-pdf"></i>
+      </a>
+
+      <a href="https://research.ece.ncsu.edu/vazquezresearchgroup/" target="_blank" title="Research Group">
+        <i class="fa-solid fa-flask"></i>
       </a>
     </div>
 
     <nav class="nav-links">
-      <a href="#home">home</a>
-      <a href="#publications">publications</a>
-      <a href="cv.pdf" target="_blank">cv</a>
+      <a href="#home">Home</a>
+      <a href="#publications">Publications</a>
+      <a href="cv.pdf" target="_blank">CV</a>
     </nav>
   </header>
 
@@ -279,8 +286,7 @@
           <a href="https://www.ncsu.edu/" target="_blank">North Carolina State University</a>,
           where I work as a Graduate Research Assistant in the
           <a href="https://research.ece.ncsu.edu/vazquezresearchgroup/" target="_blank">Vazquez Research Group</a>
-          under the supervision of
-          <a href="https://scholar.google.com/citations?hl=en&user=KVIESiQAAAAJ" target="_blank">Dr. Abraham Vázquez-Guardado</a>.
+          under the supervision of Dr. Abraham Vázquez-Guardado.
         </p>
 
         <p>
@@ -311,7 +317,7 @@
           and playing volleyball.
         </p>
 
-        <div class="section-title">research interests</div>
+        <div class="section-title">Research Interests</div>
         <ul>
           <li>Optical tweezers and optical nanotweezers</li>
           <li>Plasmonics and nano-optics</li>
@@ -321,7 +327,7 @@
           <li>Biosensing and translational optical platforms</li>
         </ul>
 
-        <div class="section-title" id="publications">publications</div>
+        <div class="section-title" id="publications">Publications</div>
 
         <div class="publication">
           <strong>Nasrin Abdollahi</strong> and Abraham Vazquez-Guardado,
@@ -360,11 +366,13 @@
 
         <div class="publication">
           S. Esmail Hosseini and <strong>Nasrin Abdollahi</strong>,
-          “Bias-free OSSB modulator with tunable OCSR,”
-          <em>Optics Communications</em>, 2018.
+          <a href="https://doi.org/10.1016/j.optcom.2018.08.073" target="_blank">
+            “Bias-free OSSB modulator with tunable OCSR”
+          </a>,
+          <em>Optics Communications</em>, 430, 304–310, 2019.
         </div>
 
-        <div class="section-title">education</div>
+        <div class="section-title">Education</div>
         <ul>
           <li>
             Ph.D. in Electrical and Computer Engineering,
@@ -382,12 +390,12 @@
         </ul>
 
         <div class="button-row">
-          <a class="button" href="cv.pdf" target="_blank">CV</a>
-          <a class="button" href="https://scholar.google.com/citations?hl=en&user=w89dnTUAAAAJ" target="_blank">Google Scholar</a>
-          <a class="button" href="https://www.linkedin.com/in/nasrin-abdollahi-6a848995" target="_blank">LinkedIn</a>
-          <a class="button" href="mailto:nabdoll@ncsu.edu">Email</a>
-          <a class="button" href="https://github.com/nasrinabdollahiborazjan" target="_blank">GitHub</a>
-          <a class="button" href="https://research.ece.ncsu.edu/vazquezresearchgroup/" target="_blank">Research Group</a>
+          <a class="button" href="cv.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i>CV</a>
+          <a class="button" href="https://scholar.google.com/citations?user=w89dnTUAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i>Google Scholar</a>
+          <a class="button" href="https://www.linkedin.com/in/nasrin-abdollahi-6a848995" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
+          <a class="button" href="mailto:nabdoll@ncsu.edu"><i class="fa-solid fa-envelope"></i>Email</a>
+          <a class="button" href="https://github.com/nasrinabdollahiborazjan" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+          <a class="button" href="https://research.ece.ncsu.edu/vazquezresearchgroup/" target="_blank"><i class="fa-solid fa-flask"></i>Research Group</a>
         </div>
 
         <div class="footer">
@@ -405,11 +413,11 @@
           Graduate Research Assistant<br>
           <a href="https://research.ece.ncsu.edu/vazquezresearchgroup/" target="_blank">Vazquez Research Group</a><br><br>
 
-          <a href="mailto:nabdoll@ncsu.edu">nabdoll@ncsu.edu</a><br>
-          <a href="https://github.com/nasrinabdollahiborazjan" target="_blank">GitHub</a><br>
-          <a href="https://www.linkedin.com/in/nasrin-abdollahi-6a848995" target="_blank">LinkedIn</a><br>
-          <a href="https://scholar.google.com/citations?hl=en&user=w89dnTUAAAAJ" target="_blank">Google Scholar</a><br>
-          <a href="https://scholar.google.com/citations?hl=en&user=KVIESiQAAAAJ" target="_blank">Advisor Google Scholar</a>
+          <a href="mailto:nabdoll@ncsu.edu"><i class="fa-solid fa-envelope"></i>nabdoll@ncsu.edu</a><br>
+          <a href="https://github.com/nasrinabdollahiborazjan" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a><br>
+          <a href="https://www.linkedin.com/in/nasrin-abdollahi-6a848995" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a><br>
+          <a href="https://scholar.google.com/citations?user=w89dnTUAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i>Google Scholar</a><br>
+          <a href="cv.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i>CV</a>
         </div>
       </div>
 
