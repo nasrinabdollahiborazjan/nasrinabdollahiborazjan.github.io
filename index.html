@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nasrin Abdollahi</title>
 
+  <!-- Icons: Font Awesome + Academicons for Google Scholar -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
   <style>
     body {
       margin: 0;
@@ -15,10 +19,55 @@
       line-height: 1.6;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .topbar {
+      width: 100%;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 34px;
+      box-sizing: border-box;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .social-icons a {
+      color: #111;
+      font-size: 1.75rem;
+      margin-right: 13px;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      color: #169dcc;
+      text-decoration: none;
+    }
+
+    .nav-links a {
+      color: #222;
+      font-size: 1.15rem;
+      margin-left: 28px;
+      text-decoration: none;
+      text-transform: lowercase;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links a:hover {
+      color: #169dcc;
+      text-decoration: none;
+    }
+
     .container {
       max-width: 1250px;
       margin: 0 auto;
-      padding: 28px 24px 60px;
+      padding: 38px 24px 60px;
     }
 
     h1 {
@@ -85,6 +134,7 @@
       color: #111;
       text-transform: lowercase;
       text-align: left;
+      scroll-margin-top: 90px;
     }
 
     ul {
@@ -125,10 +175,6 @@
       text-justify: inter-word;
     }
 
-    .publication a {
-      font-weight: 500;
-    }
-
     .footer {
       margin-top: 45px;
       color: #777;
@@ -136,6 +182,17 @@
     }
 
     @media (max-width: 900px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .nav-links a {
+        margin-left: 0;
+        margin-right: 18px;
+      }
+
       .main {
         grid-template-columns: 1fr;
       }
@@ -151,7 +208,34 @@
   </style>
 </head>
 
-<body>
+<body id="home">
+
+  <header class="topbar">
+    <div class="social-icons">
+      <a href="mailto:nabdoll@ncsu.edu" title="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
+
+      <a href="https://github.com/nasrinabdollahiborazjan" target="_blank" title="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/nasrin-abdollahi-6a848995" target="_blank" title="LinkedIn">
+        <i class="fa-brands fa-linkedin"></i>
+      </a>
+
+      <a href="https://scholar.google.com/citations?hl=en&user=w89dnTUAAAAJ" target="_blank" title="Google Scholar">
+        <i class="ai ai-google-scholar"></i>
+      </a>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#home">home</a>
+      <a href="#publications">publications</a>
+      <a href="cv.pdf" target="_blank">cv</a>
+    </nav>
+  </header>
+
   <div class="container">
 
     <h1><strong>Nasrin</strong> Abdollahi</h1>
@@ -201,7 +285,7 @@
           and playing volleyball.
         </p>
 
-        <div class="section-title">Research Interests</div>
+        <div class="section-title">research interests</div>
         <ul>
           <li>Optical tweezers and optical nanotweezers</li>
           <li>Plasmonics and nano-optics</li>
@@ -211,7 +295,7 @@
           <li>Biosensing and translational optical platforms</li>
         </ul>
 
-        <div class="section-title">Selected Publications</div>
+        <div class="section-title" id="publications">publications</div>
 
         <div class="publication">
           <strong>Nasrin Abdollahi</strong> and Abraham Vazquez-Guardado,
@@ -223,7 +307,6 @@
           <strong>Nasrin Abdollahi</strong> and Abraham Vazquez-Guardado,
           “Engineering Trapping Efficiency in Plasmonic Tweezers via Nanoparticle Size and Material,”
           <em>Conference on Lasers and Electro-Optics</em>, Optica Publishing Group, 2026.
-          <a href="https://scholar.google.com/citations?hl=en&user=w89dnTUAAAAJ" target="_blank">[Google Scholar]</a>
         </div>
 
         <div class="publication">
@@ -255,7 +338,7 @@
           <em>Optics Communications</em>, 2018.
         </div>
 
-        <div class="section-title">Education</div>
+        <div class="section-title">education</div>
         <ul>
           <li>
             Ph.D. in Electrical and Computer Engineering,
@@ -277,6 +360,7 @@
           <a class="button" href="https://scholar.google.com/citations?hl=en&user=w89dnTUAAAAJ" target="_blank">Google Scholar</a>
           <a class="button" href="https://www.linkedin.com/in/nasrin-abdollahi-6a848995" target="_blank">LinkedIn</a>
           <a class="button" href="mailto:nabdoll@ncsu.edu">Email</a>
+          <a class="button" href="https://github.com/nasrinabdollahiborazjan" target="_blank">GitHub</a>
           <a class="button" href="https://research.ece.ncsu.edu/vazquezresearchgroup/" target="_blank">Research Group</a>
         </div>
 
@@ -296,6 +380,7 @@
           <a href="https://research.ece.ncsu.edu/vazquezresearchgroup/" target="_blank">Vazquez Research Group</a><br><br>
 
           <a href="mailto:nabdoll@ncsu.edu">nabdoll@ncsu.edu</a><br>
+          <a href="https://github.com/nasrinabdollahiborazjan" target="_blank">GitHub</a><br>
           <a href="https://www.linkedin.com/in/nasrin-abdollahi-6a848995" target="_blank">LinkedIn</a><br>
           <a href="https://scholar.google.com/citations?hl=en&user=w89dnTUAAAAJ" target="_blank">Google Scholar</a><br>
           <a href="https://scholar.google.com/citations?hl=en&user=KVIESiQAAAAJ" target="_blank">Advisor Google Scholar</a>
