@@ -10,13 +10,38 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
   <style>
+    :root {
+      --bg: #f7f7f7;
+      --text: #111;
+      --muted: #3f3f3f;
+      --topbar-bg: #ffffff;
+      --border: #e5e5e5;
+      --link: #169dcc;
+      --accent: #9A0000;
+      --divider: #888;
+      --photo-shadow: rgba(0,0,0,0.12);
+    }
+
+    body.dark-mode {
+      --bg: #111111;
+      --text: #f2f2f2;
+      --muted: #e4e4e4;
+      --topbar-bg: #1c1c1c;
+      --border: #333333;
+      --link: #66d9ff;
+      --accent: #ff6b6b;
+      --divider: #bbbbbb;
+      --photo-shadow: rgba(255,255,255,0.08);
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background: #f7f7f7;
-      color: #222;
+      background: var(--bg);
+      color: var(--text);
       font-family: "Helvetica Neue", Arial, sans-serif;
       line-height: 1.6;
+      transition: background 0.25s ease, color 0.25s ease;
     }
 
     html {
@@ -25,8 +50,8 @@
 
     .topbar {
       width: 100%;
-      background: #ffffff;
-      border-bottom: 1px solid #e5e5e5;
+      background: var(--topbar-bg);
+      border-bottom: 1px solid var(--border);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -35,10 +60,11 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      transition: background 0.25s ease, border-color 0.25s ease;
     }
 
     .social-icons a {
-      color: #111;
+      color: var(--text);
       font-size: 1.8rem;
       margin-right: 13px;
       text-decoration: none;
@@ -46,12 +72,17 @@
     }
 
     .social-icons a:hover {
-      color: #169dcc;
+      color: var(--link);
       text-decoration: none;
     }
 
+    .nav-links {
+      display: flex;
+      align-items: center;
+    }
+
     .nav-links a {
-      color: #222;
+      color: var(--text);
       font-size: 1.15rem;
       margin-left: 28px;
       text-decoration: none;
@@ -59,8 +90,23 @@
     }
 
     .nav-links a:hover {
-      color: #169dcc;
+      color: var(--link);
       text-decoration: none;
+    }
+
+    .theme-toggle {
+      margin-left: 24px;
+      border: none;
+      background: transparent;
+      color: var(--text);
+      font-size: 1.25rem;
+      cursor: pointer;
+      padding: 4px;
+      transition: color 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+      color: var(--link);
     }
 
     .container {
@@ -79,14 +125,14 @@
       line-height: 1.05;
       margin: 0;
       font-weight: 800;
-      color: #3f3f3f;
+      color: var(--muted);
       letter-spacing: -2px;
     }
 
     .name-divider {
       width: 150px;
       height: 5px;
-      background: #888;
+      background: var(--divider);
       border-radius: 10px;
       margin: 24px auto 20px;
     }
@@ -94,13 +140,13 @@
     .hero-title {
       font-size: 2rem;
       font-weight: 300;
-      color: #222;
+      color: var(--text);
       margin: 0;
       line-height: 1.35;
     }
 
     a {
-      color: #169dcc;
+      color: var(--link);
       text-decoration: none;
     }
 
@@ -126,7 +172,7 @@
       width: 100%;
       max-width: 410px;
       border-radius: 6px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      box-shadow: 0 4px 12px var(--photo-shadow);
       margin-bottom: 24px;
     }
 
@@ -134,7 +180,7 @@
       font-family: "Courier New", monospace;
       font-size: 1.05rem;
       line-height: 1.7;
-      color: #111;
+      color: var(--text);
     }
 
     .section-title {
@@ -142,7 +188,7 @@
       margin-top: 42px;
       margin-bottom: 12px;
       font-weight: 700;
-      color: #111;
+      color: var(--text);
       text-align: left;
       scroll-margin-top: 90px;
     }
@@ -157,31 +203,6 @@
       font-size: 1.05rem;
     }
 
-    .button-row {
-      margin-top: 20px;
-    }
-
-    .button {
-      display: inline-block;
-      margin-right: 12px;
-      margin-bottom: 10px;
-      padding: 9px 14px;
-      border: 1.5px solid #9A0000;
-      color: #9A0000;
-      border-radius: 5px;
-      font-weight: 600;
-    }
-
-    .button i {
-      margin-right: 6px;
-    }
-
-    .button:hover {
-      background: #9A0000;
-      color: white;
-      text-decoration: none;
-    }
-
     .publication {
       margin-bottom: 16px;
       font-size: 1.03rem;
@@ -189,9 +210,30 @@
       text-justify: inter-word;
     }
 
+    .bottom-icons {
+      margin-top: 28px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .bottom-icons a {
+      color: var(--text);
+      font-size: 2rem;
+      text-decoration: none;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+
+    .bottom-icons a:hover {
+      color: var(--link);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
     .footer {
       margin-top: 45px;
-      color: #777;
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
@@ -202,9 +244,17 @@
         gap: 12px;
       }
 
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
       .nav-links a {
         margin-left: 0;
         margin-right: 18px;
+      }
+
+      .theme-toggle {
+        margin-left: 0;
       }
 
       .main {
@@ -247,7 +297,7 @@
       </a>
 
       <a href="cv.pdf" target="_blank" title="CV">
-        <i class="fa-solid fa-file-pdf"></i>
+        <i class="fa-solid fa-file-lines"></i>
       </a>
 
       <a href="https://research.ece.ncsu.edu/vazquezresearchgroup/" target="_blank" title="Research Group">
@@ -259,6 +309,10 @@
       <a href="#home">Home</a>
       <a href="#publications">Publications</a>
       <a href="cv.pdf" target="_blank">CV</a>
+
+      <button class="theme-toggle" id="themeToggle" title="Toggle night mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
     </nav>
   </header>
 
@@ -383,13 +437,30 @@
           </li>
         </ul>
 
-        <div class="button-row">
-          <a class="button" href="cv.pdf" target="_blank"><i class="fa-solid fa-file-pdf"></i>CV</a>
-          <a class="button" href="https://scholar.google.com/citations?user=w89dnTUAAAAJ&hl=en" target="_blank"><i class="ai ai-google-scholar"></i>Google Scholar</a>
-          <a class="button" href="https://www.linkedin.com/in/nasrin-abdollahi-6a848995" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a>
-          <a class="button" href="mailto:nabdoll@ncsu.edu"><i class="fa-solid fa-envelope"></i>Email</a>
-          <a class="button" href="https://github.com/nasrinabdollahiborazjan" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
-          <a class="button" href="https://research.ece.ncsu.edu/vazquezresearchgroup/" target="_blank"><i class="fa-solid fa-flask"></i>Research Group</a>
+        <div class="bottom-icons">
+          <a href="mailto:nabdoll@ncsu.edu" title="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+
+          <a href="https://github.com/nasrinabdollahiborazjan" target="_blank" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a href="https://www.linkedin.com/in/nasrin-abdollahi-6a848995" target="_blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+
+          <a href="https://scholar.google.com/citations?user=w89dnTUAAAAJ&hl=en" target="_blank" title="Google Scholar">
+            <i class="ai ai-google-scholar"></i>
+          </a>
+
+          <a href="cv.pdf" target="_blank" title="CV">
+            <i class="fa-solid fa-file-lines"></i>
+          </a>
+
+          <a href="https://research.ece.ncsu.edu/vazquezresearchgroup/" target="_blank" title="Research Group">
+            <i class="fa-solid fa-flask"></i>
+          </a>
         </div>
 
         <div class="footer">
@@ -411,5 +482,34 @@
 
     </div>
   </div>
+
+  <script>
+    const toggleButton = document.getElementById("themeToggle");
+    const toggleIcon = toggleButton.querySelector("i");
+
+    function setTheme(mode) {
+      if (mode === "dark") {
+        document.body.classList.add("dark-mode");
+        toggleIcon.classList.remove("fa-moon");
+        toggleIcon.classList.add("fa-sun");
+      } else {
+        document.body.classList.remove("dark-mode");
+        toggleIcon.classList.remove("fa-sun");
+        toggleIcon.classList.add("fa-moon");
+      }
+      localStorage.setItem("theme", mode);
+    }
+
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      setTheme("dark");
+    }
+
+    toggleButton.addEventListener("click", () => {
+      const isDark = document.body.classList.contains("dark-mode");
+      setTheme(isDark ? "light" : "dark");
+    });
+  </script>
+
 </body>
 </html>
